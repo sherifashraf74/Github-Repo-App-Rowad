@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.githubreposapp.presentation.navigation.AppNavHost
+import com.example.githubreposapp.presentation.screens.network_connection_error_screen.ConnectionErrorScreen
 import com.example.githubreposapp.theme.GithubReposAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             GithubReposAppTheme {
-                AppNavHost()
+                ConnectionErrorScreen(onRetry = {})
             }
         }
     }

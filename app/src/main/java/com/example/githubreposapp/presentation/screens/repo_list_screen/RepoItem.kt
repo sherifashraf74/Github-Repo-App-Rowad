@@ -1,4 +1,4 @@
-package com.example.githubreposapp.presentation.screens.repo_list_screen
+ package com.example.githubreposapp.presentation.screens.repo_list_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
