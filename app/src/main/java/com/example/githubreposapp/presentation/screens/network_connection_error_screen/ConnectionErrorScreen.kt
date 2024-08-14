@@ -1,6 +1,5 @@
 package com.example.githubreposapp.presentation.screens.network_connection_error_screen
 
-
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,7 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.githubreposapp.R
 import com.example.githubreposapp.presentation.screens.common_components.AppBar
 import com.example.githubreposapp.presentation.screens.network_connection_error_screen.components.LottieAnimationIcon
@@ -29,7 +27,8 @@ import com.example.githubreposapp.presentation.screens.network_connection_error_
 
 @ExperimentalMaterial3Api
 @Composable
-fun ConnectionErrorScreen(modifier:Modifier = Modifier,onRetry : ()-> Unit)
+fun ConnectionErrorScreen(modifier:Modifier = Modifier
+                          ,onRetry : ()-> Unit)
 {
     Scaffold(
         topBar = { AppBar(title = R.string.repository_screen_title,
@@ -42,8 +41,10 @@ fun ConnectionErrorScreen(modifier:Modifier = Modifier,onRetry : ()-> Unit)
             .fillMaxSize()
             .padding(paddingValues)
             ,horizontalAlignment = Alignment.CenterHorizontally
-            , verticalArrangement = Arrangement.Center) {
-        LottieAnimationIcon()
+            , verticalArrangement = Arrangement.Center)
+        {
+
+            LottieAnimationIcon()
             Spacer(modifier = Modifier.height(24.dp))
             Text(text = stringResource(id = R.string.something_went_wrong)
                 ,style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
@@ -54,16 +55,16 @@ fun ConnectionErrorScreen(modifier:Modifier = Modifier,onRetry : ()-> Unit)
                 , color = MaterialTheme.colorScheme.outline
                 ,modifier = Modifier.padding(bottom = 24.dp))
             OutlinedButton(onClick = onRetry
-            ,modifier = Modifier
+                ,modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
-                    .height(48.dp),
-                border = BorderStroke(2.dp, color = MaterialTheme.colorScheme.error)
+                    .height(48.dp)
+                ,border = BorderStroke(2.dp, color = MaterialTheme.colorScheme.error)
             ){
                 Text(
-                    text = "Retry",
-                    fontSize = 16.sp,
-                    color = MaterialTheme.colorScheme.error // Customize text color
+                    text = stringResource(id=R.string.retry),
+                    style=MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
+                    color = MaterialTheme.colorScheme.error
                 )
             }
             Spacer(modifier = Modifier.height(120.dp))

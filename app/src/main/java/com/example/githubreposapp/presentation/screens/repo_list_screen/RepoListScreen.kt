@@ -26,7 +26,7 @@ fun RepoListScreen(
     Scaffold(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colorScheme.backgro   und),
         topBar = {
             AppBar(
                 title = R.string.repository_screen_title,
